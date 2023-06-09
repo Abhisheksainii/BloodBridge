@@ -5,8 +5,7 @@ const mongoose = require('mongoose');
 const cookieParser = require("cookie-parser");
 
 const app = express();
-const hostname = process.env.RENDER_EXTERNAL_HOST || 'localhost';
-const port = process.env.PORT || 3000;
+const port = 3177;
 
 dotenv.config();
 
@@ -14,7 +13,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
 	cors({
-		origin: '*'
+		origin: [
+			"http://localhost:3000",
+		],
+		credentials: true,
 	})
 );
 
@@ -29,5 +31,5 @@ app.use("/bank", require("./routers/bankRouter"));
 app.use("/camps", require("./routers/campRouter"));
 
 app.listen(port, () =>
-	console.log(`Server running at http://${hostname}:${port}`)
+	console.log(`Server running at http://localhost:${port}`)
 );

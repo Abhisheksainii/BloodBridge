@@ -6,10 +6,10 @@ import g4 from "../../assets/donation/g4.jpg"
 
 const AboutDonation = () => {
     const data = [
-        { title: "Registration", img: g1 },
-        { title: "Seeing", img: g2 },
-        { title: "Donation", img: g3 },
-        { title: "Save Life", img: g4 },
+        { title: "Registration", img: g1, desc: "Click on the Register or Signup button. Fill out the registration form with your personal details, including name, date of birth, contact information, and email address. Create a unique username and password for your account. Verify your account by clicking on the email verification link sent to your provided email address. Complete your patient or donor profile, providing relevant medical information or donation preferences. Once registered, you can log in using your username and password." },
+        { title: "Seeing", img: g2, desc: "As a donor you can see the patients requests in the blood requests tab, select the patient you want to donate the blood to according to your blood group." },
+        { title: "Donation", img: g3, desc: "For donating the blood you will have to visit the blood bank which will be mentioned in the blood request section" },
+        { title: "Save Life", img: g4, desc: "After donating the blood you will get rewards and incentives for saving a life" },
     ]
     return (
         <section className="grid place-items-center dark:text-white-900">
@@ -24,7 +24,7 @@ const AboutDonation = () => {
                             <img src={e.img} draggable={false} width="100%" alt="" />
                             <div className='m-4'>
                                 <h1 className='font-bold text-lg text-midnight'>{i + 1} - {e.title}</h1>
-                                <p className='text-justify'>Lorem ipsum dolor, sit amet consectetur qwey adipisicing elit. Doloribus, as aliquam corporis dolorem consectetur qui libero, veritatis, nihil alias repellat quam architecto nobis laudantium ipsum nemo nesciunt quisquam est odit ad?</p>
+                                <p className='text-justify'>{e.desc}</p>
                             </div>
                         </div>
                     )}
